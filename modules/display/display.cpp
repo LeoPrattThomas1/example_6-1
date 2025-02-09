@@ -171,11 +171,16 @@ void displayCharPositionWrite( uint8_t charPositionX, uint8_t charPositionY )
     }
 }
 
-void displayStringWrite( const char * str )
+void displayStringWrite( const char *str )
 {
     while (*str) {
         displayCodeWrite(DISPLAY_RS_DATA, *str++);
     }
+}
+
+void displayStringBinWrite( const uint8_t bin )
+{
+    displayCodeWrite(DISPLAY_RS_DATA, bin);
 }
 
 //=====[Implementations of private functions]==================================
